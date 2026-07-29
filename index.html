@@ -47,7 +47,7 @@
   }
   a{color:inherit; text-decoration:none;}
   img{max-width:100%; display:block;}
-  .container{max-width:1400px; margin:0 auto; padding:0 40px;}
+  .container{max-width:1800px; margin:0 auto; padding:0 28px;}
   .eyebrow{
     font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
     color:var(--gold-deep);
@@ -64,7 +64,7 @@
   }
   .nav-inner{
     display:flex; align-items:center; justify-content:space-between;
-    padding:14px 40px; max-width:1400px; margin:0 auto;
+    padding:14px 28px; max-width:1800px; margin:0 auto;
   }
   .logo-mark{display:flex; align-items:center; gap:12px;}
   .logo-mark img{height:44px; width:auto;}
@@ -236,7 +236,7 @@
   .pricing-card p{font-size:13.5px; color:rgba(248,245,239,0.7); margin:10px 0 22px;}
 
   /* Performance Signal showcase */
-  .signal-showcase-grid{display:grid; grid-template-columns:1fr; gap:56px; align-items:center;}
+  .signal-showcase-grid{display:grid; grid-template-columns:1fr; gap:56px; align-items:center; max-width:1300px; margin:0 auto;}
   @media(min-width:900px){.signal-showcase-grid{grid-template-columns:1.05fr 1fr;}}
   .signal-checklist{list-style:none; margin-top:6px;}
   .signal-checklist li{display:flex; gap:14px; padding:12px 0; align-items:flex-start;}
@@ -302,6 +302,9 @@
 
   /* FAQ */
   .faq-list{max-width:740px;}
+  @media(min-width:1300px){
+    .faq-list{max-width:100%; display:grid; grid-template-columns:1fr 1fr; column-gap:64px;}
+  }
   .faq-item{border-bottom:1px solid rgba(28,28,28,0.1);}
   .faq-q{
     width:100%; text-align:left; background:none; border:none; cursor:pointer;
