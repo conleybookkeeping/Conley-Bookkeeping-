@@ -1,33 +1,43 @@
 # Conley Bookkeeping LLC — Website
 
-A single-page website for Conley Bookkeeping LLC, built as one self-contained
-`index.html` file (HTML, CSS, and JavaScript inline — no build step, no
-dependencies to install). The brand logo fonts load from Google Fonts; the logo
-image is embedded directly in the file, so the site works fully offline once the
-fonts are cached.
+A static multi-page website for Conley Bookkeeping LLC — plain HTML/CSS/JS,
+no build step, no framework. Each page is a real file with its own URL (not a
+single-page app), so every section is directly linkable, bookmarkable, and
+indexable by search engines.
 
 ## Structure
 
-The site is a lightweight single-page app. Navigation swaps between five
-"pages" (`<div class="page">` sections) via a small vanilla-JS `showPage()`
-function — no framework, no router.
+```
+index.html          Home            → /
+services/index.html Services        → /services/
+about/index.html     About           → /about/
+faq/index.html        FAQ             → /faq/
+contact/index.html    Contact         → /contact/
 
-| Section  | ID          | Contents                                             |
-|----------|-------------|------------------------------------------------------|
-| Home     | `#home`     | Hero, pain points, services preview, why-us, CTA     |
-| Services | `#services` | Service offerings and details                        |
-| About    | `#about`    | Ethan Conley bio and background                       |
-| FAQ      | `#faq`      | Accordion of common questions                        |
-| Contact  | `#contact`  | Phone, email, location, hours, and call-to-action    |
+style.css            Shared stylesheet (all pages)
+script.js            Shared behavior (mobile nav, FAQ accordion,
+                      scroll-reveal, contact form submission)
+assets/              Logo, hero photo, portrait, favicon
+```
 
-Interactive behavior (all vanilla JS at the bottom of the file):
-- Page switching + mobile nav toggle
-- FAQ accordion
+Every page shares the same `<head>` pattern, header nav, and footer; only the
+page-specific `<title>`/meta description and main content differ. Nav links
+and internal CTAs are plain `<a href="...">` — no client-side routing.
+
+Interactive behavior (`script.js`):
+- Mobile nav toggle
+- FAQ accordion (one open item per category)
 - Scroll-reveal animations (respects `prefers-reduced-motion`)
+- Contact form — submits via [Web3Forms](https://web3forms.com) (no backend
+  needed); shows an inline success/error message
 
-## Running it
+The Contact page also embeds a live Calendly inline widget for booking calls.
 
-Just open `index.html` in a browser, or serve the folder:
+## Running it locally
+
+Because pages reference shared assets with absolute paths (`/style.css`,
+`/assets/...`), you need to serve the folder over HTTP — opening `index.html`
+directly via `file://` will not resolve those paths correctly.
 
 ```bash
 python3 -m http.server 8000
@@ -36,18 +46,24 @@ python3 -m http.server 8000
 
 ## Deploying
 
-Because it is a single static file, it can be hosted anywhere that serves
-static content — GitHub Pages, Netlify, Cloudflare Pages, Vercel, or any web
-host. Upload `index.html` as the site root.
+Any static host works — GitHub Pages, Vercel, Netlify, Cloudflare Pages.
+Clean URLs like `/services/` work automatically on all of them via the
+standard `folder/index.html` convention (no rewrite rules or `vercel.json`
+needed). Upload the whole repository as the site root.
+
+This repo auto-deploys to both GitHub Pages (`.github/workflows/pages.yml`,
+on push to `main`) and Vercel (connected via the Vercel GitHub App).
 
 ## Editing content
 
-A few values are intended to be reviewed/updated before launch:
-- **Business hours** (Contact section) — currently "By Appointment · Mon–Fri".
-- **Portrait photo** (About section) — currently a placeholder graphic labeled
-  "Ethan Conley · Founder"; drop in a real headshot when available.
-- **Privacy Policy / Terms of Service** footer links point to `#` — wire them up
-  when those pages exist.
+- **Contact form**: the Web3Forms access key is hardcoded in
+  `contact/index.html`'s form as a hidden `access_key` input.
+- **Calendly link**: `https://calendly.com/admin-conleybookkeepingllc/discovery-call`,
+  used for both the "Schedule a Free Call" buttons and the Contact page's
+  inline booking widget.
+- **Social links**: only LinkedIn is currently linked, in the footer
+  (`assets` are shared across pages, but each footer is authored per file —
+  update all five if the URL changes).
 
 Contact details in use: phone `937-760-8949`, email
 `admin@conleybookkeepingllc.com`, based in Dayton, Ohio.
