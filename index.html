@@ -923,7 +923,7 @@
           </div>
           <div class="faq-item">
             <button class="faq-q">What types of businesses do you work with?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — what industries/business types do you typically work with, or is it open to any small business? Fill in before publishing.]]</p></div>
+            <div class="faq-a"><p>I work with small businesses, especially service-based businesses without complex inventory or multiple locations. If you use QuickBooks Online, or are ready to move to it, and want a bookkeeper who understands your numbers, we may be a good fit. A free diagnostic call will help determine that quickly.</p></div>
           </div>
         </div>
 
@@ -953,15 +953,15 @@
           </div>
           <div class="faq-item">
             <button class="faq-q">Can you help me set up QuickBooks Online?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — confirm: is QBO setup part of onboarding, or a separate paid service? Fill in before publishing.]]</p></div>
+            <div class="faq-a"><p>Yes. QuickBooks Online setup is available as a one-time service. I will organize your chart of accounts, connect your bank feeds, and set up your vendor and customer records correctly from the beginning.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q">Will I have access to my books?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — confirm what access clients get (e.g. their own QBO login, reports only, etc.) before publishing.]]</p></div>
+            <div class="faq-a"><p>Yes. Your QuickBooks Online account belongs to you, and you will retain full access at all times. I work directly inside your account, so nothing is locked away or hidden from you.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q">Can you work with my existing file?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — confirm how you handle a client's existing QBO file before publishing.]]</p></div>
+            <div class="faq-a"><p>Yes. If you already use QuickBooks Online, I can work with your existing file whether it is clean and current or behind and disorganized. Any required cleanup will be quoted separately as a one-time project before ongoing monthly bookkeeping begins. If you currently use QuickBooks Desktop, I can help move your books to QuickBooks Online first.</p></div>
           </div>
         </div>
 
@@ -979,19 +979,19 @@
           </div>
           <div class="faq-item">
             <button class="faq-q">What information do you need from me?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — list what you need from a new client to get started (e.g. bank/CC access, prior financials). Fill in before publishing.]]</p></div>
+            <div class="faq-a"><p>I will need access to your QuickBooks Online account through an accountant invitation, access to the relevant bank and credit card information, and some background on how your business operates. This includes what you sell, how customers pay you, and anything unusual I should know about. I will walk you through everything needed during the diagnostic call.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q">What's the onboarding process?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — walk through your actual onboarding steps here. Fill in before publishing.]]</p></div>
+            <div class="faq-a"><p>We begin with a free diagnostic call. I then review your books or help set them up if you are starting fresh. You receive a flat monthly quote based on your actual transaction volume and bookkeeping needs. Once approved, I complete onboarding and begin managing your books.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q">Is there a long-term contract?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — confirm: month-to-month, or a minimum term? Fill in before publishing.]]</p></div>
+            <div class="faq-a"><p>No long-term contract is required. Monthly bookkeeping is billed monthly and can be canceled with notice. Cleanup and other one-time projects are scoped and quoted before work begins.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q">When can we get started?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — typical timeline from signed agreement to kickoff? Fill in before publishing.]]</p></div>
+            <div class="faq-a"><p>You can get started by scheduling a free diagnostic call. Depending on the condition and complexity of your books, monthly bookkeeping can usually begin within one to two weeks. If cleanup is required first, I will provide a clear timeline before starting.</p></div>
           </div>
         </div>
 
@@ -1021,7 +1021,7 @@
           </div>
           <div class="faq-item">
             <button class="faq-q">How do we share documents?<span class="plus">+</span></button>
-            <div class="faq-a"><p class="pending">[[Ethan — confirm how documents get shared (email, portal, Drive, etc.) before publishing.]]</p></div>
+            <div class="faq-a"><p>Most bookkeeping information will be shared securely through QuickBooks Online and connected financial accounts. If additional documents are needed, I will provide clear instructions for securely sending them. Sensitive financial information should not be sent through unsecured messages or social media.</p></div>
           </div>
         </div>
 
@@ -1136,6 +1136,9 @@
           <h3>Send Us a Message</h3>
           <p>Fill out the form below and we'll get back to you within one business day.</p>
           <form id="contactForm">
+            <input type="hidden" name="access_key" value="78e2bf3d-8455-463e-915f-2582bc671189">
+            <input type="hidden" name="subject" value="New inquiry from Conley Bookkeeping website">
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
             <div class="form-row two">
               <div class="field"><label for="fullName">Full Name *</label><input type="text" id="fullName" name="fullName" required></div>
               <div class="field"><label for="businessName">Business Name</label><input type="text" id="businessName" name="businessName"></div>
@@ -1162,7 +1165,8 @@
                 <textarea id="cMessage" name="message" placeholder="Your message..." required></textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-gold" style="width:100%;">Send Message</button>
+            <button type="submit" class="btn btn-gold" id="contactSubmitBtn" style="width:100%;">Send Message</button>
+            <div id="formStatus" role="status" style="margin-top:14px; font-size:13.5px; display:none;"></div>
           </form>
           <div class="form-note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
@@ -1187,8 +1191,7 @@
         </div>
         <div style="max-width:260px; font-size:13px; color:rgba(247,243,237,0.55);">Clean books. Clear numbers. Direct access to Ethan.</div>
         <div class="footer-social">
-          <a href="#" aria-label="Facebook" title="Facebook (link pending)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h3l1-3h-4v-1a1 1 0 0 1 1-1Z"/></svg></a>
-          <a href="#" aria-label="LinkedIn" title="LinkedIn (link pending)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="9" width="4" height="11"/><circle cx="5" cy="5" r="1.6"/><path d="M11 20v-7a3 3 0 0 1 6 0v7M11 13V9"/></svg></a>
+          <a href="https://www.linkedin.com/in/conleybookkeepingllc" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="9" width="4" height="11"/><circle cx="5" cy="5" r="1.6"/><path d="M11 20v-7a3 3 0 0 1 6 0v7M11 13V9"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
@@ -1263,26 +1266,43 @@
     document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'));
   }
 
-  // Contact form — mailto fallback (no backend wired up yet)
+  // Contact form — submits silently via Web3Forms
   const contactForm = document.getElementById('contactForm');
   if(contactForm){
-    contactForm.addEventListener('submit', e=>{
+    const submitBtn = document.getElementById('contactSubmitBtn');
+    const statusEl = document.getElementById('formStatus');
+    contactForm.addEventListener('submit', function(e){
       e.preventDefault();
-      const f = contactForm;
-      const body = [
-        'Name: ' + f.fullName.value,
-        'Business: ' + (f.businessName.value || '—'),
-        'Email: ' + f.email.value,
-        'Phone: ' + f.phone.value,
-        'Service Needed: ' + f.service.value,
-        '',
-        'Message:',
-        f.message.value
-      ].join('\n');
-      const mailto = 'mailto:admin@conleybookkeepingllc.com'
-        + '?subject=' + encodeURIComponent('New inquiry from ' + f.fullName.value)
-        + '&body=' + encodeURIComponent(body);
-      window.location.href = mailto;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      statusEl.style.display = 'none';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
+      })
+        .then(res => res.json())
+        .then(data => {
+          statusEl.style.display = 'block';
+          if(data.success){
+            statusEl.style.color = 'var(--green)';
+            statusEl.textContent = "Thanks — your message was sent. We'll get back to you within one business day.";
+            contactForm.reset();
+          } else {
+            statusEl.style.color = 'var(--red)';
+            statusEl.textContent = 'Something went wrong sending your message. Please try again or email admin@conleybookkeepingllc.com directly.';
+          }
+        })
+        .catch(() => {
+          statusEl.style.display = 'block';
+          statusEl.style.color = 'var(--red)';
+          statusEl.textContent = 'Something went wrong sending your message. Please try again or email admin@conleybookkeepingllc.com directly.';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        });
     });
   }
 </script>
