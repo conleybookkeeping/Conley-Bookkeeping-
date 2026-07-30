@@ -35,9 +35,10 @@ The Contact page also embeds a live Calendly inline widget for booking calls.
 
 ## Running it locally
 
-Because pages reference shared assets with absolute paths (`/style.css`,
-`/assets/...`), you need to serve the folder over HTTP — opening `index.html`
-directly via `file://` will not resolve those paths correctly.
+Pages reference shared assets with relative paths (`style.css`, `assets/...`,
+`../style.css` from subpages, etc.), so you need to serve the folder over
+HTTP — opening `index.html` directly via `file://` will not resolve those
+paths correctly.
 
 ```bash
 python3 -m http.server 8000
@@ -50,6 +51,10 @@ Any static host works — GitHub Pages, Vercel, Netlify, Cloudflare Pages.
 Clean URLs like `/services/` work automatically on all of them via the
 standard `folder/index.html` convention (no rewrite rules or `vercel.json`
 needed). Upload the whole repository as the site root.
+
+Paths are relative rather than root-absolute so the site works correctly
+whether it's served at domain root (Vercel, a custom domain) or at a
+subpath (GitHub Pages project sites serve at `/<repo-name>/`, not root).
 
 This repo auto-deploys to both GitHub Pages (`.github/workflows/pages.yml`,
 on push to `main`) and Vercel (connected via the Vercel GitHub App).
